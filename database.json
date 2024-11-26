@@ -32,6 +32,118 @@
                 }
             },
             "users": []
+        },
+        {
+            "jid": "120363196002997681@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
+        },
+        {
+            "jid": "120363331952824949@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
+        },
+        {
+            "jid": "120363315617306504@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
+        },
+        {
+            "jid": "917385663427-1488213641@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
+        },
+        {
+            "jid": "120363037529652885@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
+        },
+        {
+            "jid": "120363025819955984@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
+        },
+        {
+            "jid": "120363299184390303@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
         }
     ],
     "settings": [

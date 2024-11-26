@@ -1,19 +1,19 @@
-import axios from 'axios'
+import { sfwWaifuV2 } from 'neastooapi';
 
 export const cmd = {
     name: ['waifu'],
     command: ['waifu'],
     category: ['anime'],
     detail: {
-        desc: 'random gambar anime gadis.'
+        desc: 'Random gambar anime dengan tema waifu.'
     },
     setting: {
         error_react: true
     },
     async start({ m }) {
-        await m.react('🕓')
-        let res = await axios.get('https://api.waifu.pics/sfw/waifu')
-        await m.reply('Random waifu image.', { image: res.data.url })
-        await m.react('✅')
+        await m.react('🕓');
+        const res = await sfwWaifuV2(); // Memanggil module neastooapi untuk mendapatkan gambar Waifu
+        await m.reply('Random waifu image.', { image: res.results });
+        await m.react('✅');
     }
-}
+};

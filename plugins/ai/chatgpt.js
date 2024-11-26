@@ -2,7 +2,7 @@ import { chatGPT } from 'neastooapi';
 
 export const cmd = {
     name: ['chatgpt'],
-    command: ['chatgpt'],
+    command: ['chatgpt', 'ai'],
     category: ['ai'],
     detail: {
         desc: 'AI ChatGPT',

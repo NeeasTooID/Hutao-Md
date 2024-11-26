@@ -44,16 +44,14 @@ export const cmd = {
 
             // Kirim audio ke WhatsApp
             const audioUrlToSend = downloadData.url;
-            const fileName = downloadData.filename || `${title}.mp3`;
 
             console.log('Download URL:', audioUrlToSend);
-            console.log('File Name:', fileName);
 
-            // Kirim audio sebagai dokumen
+            // Kirim audio sebagai audio yang bisa langsung dimainkan
             await conn.sendMessage(m.from, {
-                document: { url: audioUrlToSend },
+                audio: { url: audioUrlToSend },
                 mimetype: 'audio/mpeg',
-                fileName: fileName
+                ptt: false // Set `true` jika ingin mengirim sebagai voice note
             }, { quoted: m });
 
         } catch (error) {

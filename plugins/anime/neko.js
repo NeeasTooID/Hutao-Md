@@ -1,19 +1,19 @@
-import axios from 'axios'
+import { sfwNekoV2 } from 'neastooapi';
 
 export const cmd = {
     name: ['neko'],
     command: ['neko'],
     category: ['anime'],
     detail: {
-        desc: 'random gambar anime gadis kucing.'
+        desc: 'Random gambar anime dengan tema neko.'
     },
     setting: {
         error_react: true
     },
     async start({ m }) {
-        await m.react('🕓')
-        let res = await axios.get('https://api.waifu.pics/sfw/neko')
-        await m.reply('Random neko image.', { image: res.data.url })
-        await m.react('✅')
+        await m.react('🕓');
+        const res = await sfwNekoV2(); // Memanggil module neastooapi untuk mendapatkan gambar Neko
+        await m.reply('Random neko image.', { image: res.results });
+        await m.react('✅');
     }
-}
+};
