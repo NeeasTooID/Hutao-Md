@@ -1,4 +1,4 @@
-import { facebookDl } from 'neastooapi';
+import nessid from 'neastooapi';
 
 export const cmd = {
     name: ['facebook'],
@@ -6,44 +6,39 @@ export const cmd = {
     category: ['download'],
     detail: {
         desc: 'Unduh dan putar video MP4 dari Facebook menggunakan tautan',
-        use: 'link facebook'
+        use: 'link facebook',
     },
-    async start({ m, text, prefix, command, conn }) {
+    async start({ m, text, conn }) {
         if (!text) {
-            return m.reply(`Masukkan link Facebook untuk mengunduh video MP4.\nContoh: ${prefix + command} https://www.facebook.com/example`);
-        }
-
-        // Validasi apakah teks adalah tautan Facebook
-        const fbLinkPattern = /^(https?:\/\/)?(www\.)?facebook\.com\/.+$/;
-        if (!fbLinkPattern.test(text)) {
-            return m.reply('Harap masukkan tautan Facebook yang valid.');
+            return m.reply(
+                `Masukkan link Facebook untuk mengunduh video MP4.\nContoh: !facebook https://www.facebook.com/example`
+            );
         }
 
         try {
-            // Unduh video menggunakan facebookDl
-            const downloadData = await facebookDl(text);
-            if (!downloadData || !downloadData.data || !downloadData.data.length) {
-                return m.reply('Gagal mengunduh video dari tautan yang diberikan.');
+            // Panggil API FacebookDL menggunakan nessid
+            const response = await nessid.facebookDL(text);
+
+            // Validasi jika respons gagal
+            if (!response || !response.sd) {
+                return m.reply(`Gagal memproses tautan Facebook. Pesan: ${response?.desc || 'Tautan tidak valid'}`);
             }
 
-            // Ambil URL dengan resolusi 720p (HD)
-            const hdVideo = downloadData.data.find(item => item.resolution === '720p (HD)');
-            if (!hdVideo) {
-                return m.reply('Video dengan resolusi 720p (HD) tidak ditemukan.');
-            }
+            // Ambil URL video SD
+            const videoUrlToSend = response.sd;
 
-            const videoUrlToSend = hdVideo.url;
-
-            // Kirim video sebagai media yang bisa diputar
-            await conn.sendMessage(m.from, {
-                video: { url: videoUrlToSend },
-                mimetype: 'video/mp4',
-                caption: '🎥 *Video ditemukan...*'
-            }, { quoted: m });
-
+            // Kirim video dengan caption deskripsi (jika ada)
+            await conn.sendMessage(
+                m.from,
+                {
+                    video: { url: videoUrlToSend },
+                    caption: '🎥 *Video ditemukan...*',
+                },
+                { quoted: m }
+            );
         } catch (error) {
-            console.log('Error:', error);
+            console.error("Error API:", error);
             m.reply('Terjadi kesalahan saat memproses permintaan.');
         }
-    }
+    },
 };

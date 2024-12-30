@@ -144,6 +144,22 @@
                 }
             },
             "users": []
+        },
+        {
+            "jid": "120363253681950560@g.us",
+            "setting": {
+                "banned": false,
+                "detect": false,
+                "nsfw": false,
+                "antilink": false,
+                "antiraid": false,
+                "antivo": false,
+                "welcome": {
+                    "status": false,
+                    "msg": ""
+                }
+            },
+            "users": []
         }
     ],
     "settings": [
