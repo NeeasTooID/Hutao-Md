@@ -33,6 +33,7 @@
 ### Thanks To ( Source Code and Source of Ideas )
 [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets/Baileys)
 [![kazedepid](https://github.com/kazedepid.png?size=100)](https://github.com/kazedepid)
+[![Ryzenn](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
 
 ### Staff Recode/Contributor
 [![NeofetchNpc](https://github.com/NeofetchNpc.png?size=100)](https://github.com/NeofetchNpc)
