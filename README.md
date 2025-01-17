@@ -30,7 +30,7 @@
 
 ---------
 
-### Thanks To ( Source Code and Source of Ideas )
+### Thanks To ( Source Code and API )
 [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets/Baileys)
 [![kazedepid](https://github.com/kazedepid.png?size=100)](https://github.com/kazedepid)
 [![Ryzenn](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
